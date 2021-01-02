@@ -9,7 +9,4 @@ spring:
     pub-sub-domain: false   # false = Queue true = Topic
 
 #自己定义队列名称
-myqueue: boot-activemq-queue
-
-#定义服务上的队列名
-#myQueueName: springboot-activemq-queue
+myqueue: boot-activemq-queue    # public static final string acti...

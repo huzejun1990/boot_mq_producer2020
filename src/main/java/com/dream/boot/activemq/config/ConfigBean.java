@@ -16,16 +16,12 @@ import javax.jms.Queue;
 @Component
 @EnableJms
 public class ConfigBean {
+    @Value("${myqueue}")
+    //@Value("boot-activemq-queue")
+    private String myQueueName;
 
-//    @Value("${myqueue}")
-    @Value("myQueue")
-    private String myQueue;
-
-    @Bean
-    public Queue queue(){
-        return new ActiveMQQueue(myQueue);
+    @Bean //相当于 <bean id="" class="" />
+    public Queue queue() {
+        return new ActiveMQQueue(myQueueName);
     }
-
-/*    @Value("")
-    private String myQueueName;*/
 }
